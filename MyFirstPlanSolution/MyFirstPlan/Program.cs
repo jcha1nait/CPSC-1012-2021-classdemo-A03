@@ -11,7 +11,7 @@ namespace MyFirstPlan
             Console.WriteLine("Step 1:\t Grab your preferred choice of sandwich bread and place two slices on a cutting board.");
             Console.WriteLine("Step 2:\t Grab the following ingredients from your fridge: Any brand of ham(any cold-cuts you prefer as well), cheddar cheese(slices preferred), iceberg lettuce, and mayo.");
             Console.WriteLine("Step 3:\t Take a kitchen knife and slice off two reasonable sized pieces of lettuce.");
-            Console.WriteLine("Step 4(OPTIONAL):\tIf the cheddar cheese you have isn't already sliced, take your kitchen knife and cut two thin slices.");
+            Console.WriteLine("Step 4(OPTIONAL):\t If the cheddar cheese you have isn't already sliced, take your kitchen knife and cut two thin slices.");
             Console.WriteLine("Step 5:\t Take a butter knife and spread mayo over one of the bread slices.");
             Console.WriteLine("Step 6:\t Take your lettuce pieces and place them over the same slice of bread.");
             Console.WriteLine("Step 7:\t Place the ham over the lettuce in an amount that seems reasonable to you.");
