@@ -10,7 +10,9 @@ namespace FirstSample
             //to the output window.
             Console.WriteLine("Hello World!");
             Console.WriteLine("This course section is: \t OA3");
-            Console.WriteLine("The instructors name is: \t Don Welch");
+            
+            string myName = "Don Welch";
+            Console.WriteLine($"This name is printed from a variable is:\t{myName}");
         }
     }
 }
