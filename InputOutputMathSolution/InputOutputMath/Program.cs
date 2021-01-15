@@ -59,8 +59,9 @@ namespace InputOutputMath
 
             //output
             //.WriteLine() which automatically goes to the next line
-            Console.WriteLine($"The Celsius temperature is: {theCelsiusTemp}");
-            Console.WriteLine($"The Fahrenheit temperature is: {theFahrenheitTemp}");
+            Console.WriteLine($"The Celsius temperature of {theCelsiusTemp} " 
+                              +
+                              $"is {theFahrenheitTemp} in Fahrenheit.");
         }
     }
 }
