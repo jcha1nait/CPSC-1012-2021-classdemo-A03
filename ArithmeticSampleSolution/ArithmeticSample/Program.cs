@@ -30,7 +30,16 @@ namespace ArithmeticSample
             //An alternate way is to use placeholders
             //placeholders start at 0 and increment at 1
             //order is IMPORTANT
-            Console.WriteLine("The result of {0} + {1} is {2}",Cost,Tax,Total);
+            Console.WriteLine("The result of {0} + {1} is {2}", Cost, Tax, Total);
+
+            double doubleMark = 88.88;
+            int intMark = (int)doubleMark;
+            //using cast operator to convert the value in the variable doubleMark 
+            //to the int variable intMark = 88 so that the value is compatible with the int datatype
+            double doubleResult = (double)intMark / 10;
+            //using cast operator again so the result of intMark/10
+            //is converted into a doubled datatype to account as int datatypes will not account for decimal places
+            Console.WriteLine($"The result is {doubleResult}");
         }
     }
 }
