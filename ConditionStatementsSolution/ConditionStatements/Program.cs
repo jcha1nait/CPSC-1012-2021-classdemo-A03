@@ -27,6 +27,43 @@ namespace ConditionStatements
             //this condition will result in true or false
             Console.WriteLine($"{number1} + {number2} = {answer}" +
                 $" your answer is {(number1 + number2) == answer}");
+
+            //the one-way if statement
+            //has only a true path
+            double radius = 4.5;
+            if (radius>0)
+            {
+                double area = Math.Pow(radius, Math.PI);
+                Console.WriteLine($"The area of a circle with a radius of {radius} is {area}.");
+            }
+
+            //a two-way if statement
+            //has a true path and a false path
+            //the true path is coded first
+            //the false path is coded second
+            //the true path coding block is separated from the false path
+            //coding block by the key word -> else
+            if (radius > 0)
+            {
+                double area = Math.Pow(radius, Math.PI);
+                if (area >= 100.0)
+                {
+                    //true path
+                    //executed when the condition resolves to the boolean value TRUE
+                    Console.WriteLine($"The area of a circle with a radius of {radius} is {Math.Round(area,2)}. Your radius is big enough.");
+                    
+                    //at the end of this TRUE coding block you exit to the
+                    //next statement AFTER the end of the if
+                }   //this closing bracket indicates the end of the two-way if
+                else
+                {
+                    //false path
+                    //executed when the condition resolves to the boolean value FALSE
+                    Console.WriteLine($"The area of a circle with a radius of {radius} is {Math.Round(area, 2)}. Increase the size of your radius.");
+                }
+                Console.WriteLine("This is the next statement after the two-way if.");
+            }
+
         }
     }
 }
