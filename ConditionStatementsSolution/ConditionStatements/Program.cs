@@ -62,6 +62,96 @@ namespace ConditionStatements
                     Console.WriteLine($"The area of a circle with a radius of {radius} is {Math.Round(area, 2)}. Increase the size of your radius.");
                 }
                 Console.WriteLine("This is the next statement after the two-way if.");
+            
+            //Nested If algorithm
+            //a nested if is an if statement within an if statement
+            string inputTemp1 = "";
+            string racerName1;                          //just declared
+            string racerName2, racerName3;              //just declared
+            double racerTime1 = 0.0;                    //declared and assigned
+            double racerTime2 = 0.0, racerTime3 = 0.0;  //declared and assigned
+            string firstPlace, secondPlace, thirdPlace; //just declared
+            
+            //this is technically legal in C#
+            firstPlace = secondPlace = thirdPlace = ""; //variables assigned same value
+            
+            Console.Write("Enter racer 1 name:\t");
+            racerName1 = Console.ReadLine();
+            Console.Write("Enter racer 1 time in minutes (12.3):\t");
+            inputTemp1 = Console.ReadLine();
+            racerTime1 = double.Parse(inputTemp1);
+            Console.Write("Enter racer 2 name:\t");
+            racerName2 = Console.ReadLine();
+            Console.Write("Enter racer 2 time in minutes (12.3):\t");
+            //inputTemp = Console.ReadLine();
+            racerTime2 = double.Parse(Console.ReadLine());
+            Console.Write("Enter racer 3 name:\t");
+            racerName3 = Console.ReadLine();
+            Console.Write("Enter racer 3 time in minutes (12.3):\t");
+            inputTemp1 = Console.ReadLine();
+            racerTime3 = double.Parse(inputTemp1);
+            //conditional logic 
+            //a Nested IF
+            //an IF within another IF
+            
+            if (racerTime1 < racerTime2)
+            {
+                //racer1 faster than racer2
+                firstPlace = $"{racerName1} ({racerTime1})";
+                secondPlace = $"{racerName2} ({racerTime2})";
+                if (racerTime1 < racerTime3)
+                {
+                    //racer1 faster than racer3
+                    if (racerTime2 < racerTime3)
+                    {
+                        //racer2 faster than racer3
+                        thirdPlace = $"{racerName3} ({racerTime3})";
+                    }
+                    else
+                    {
+                        //racer3 faster than racer2
+                        thirdPlace = secondPlace;
+                        secondPlace = $"{racerName3} ({racerTime3})";
+                    }
+                }
+                else
+                {
+                    //racer3 faster than racer1
+                    thirdPlace = secondPlace;
+                    secondPlace = firstPlace;
+                    firstPlace = $"{racerName3} ({racerTime3})";
+
+
+                    if (racerTime2 < racerTime3)
+                    {
+                        if (racerTime1 < racerTime3)
+                        {
+                            thirdPlace = $"{racerName3} ({racerTime3})";
+                        }
+                        else
+                        {
+                            thirdPlace = secondPlace;
+                            secondPlace = $"{racerName3} ({racerTime3})";
+                        }
+                    }
+                    else
+                    {
+                        thirdPlace = secondPlace;
+                        secondPlace = firstPlace;
+                        firstPlace = $"{racerName3} ({racerTime3})";
+                    }
+                }
+            }
+            else
+            {
+                //racer2 faster than racer1
+                firstPlace = $"{racerName2} ({racerTime2})";
+                secondPlace = $"{racerName1} ({racerTime1})";
+            }
+
+            Console.WriteLine($"First place {firstPlace}\n");
+            Console.WriteLine($"Second place {secondPlace}\n");
+            Console.WriteLine($"Third place {thirdPlace}\n");
             }
 
         }

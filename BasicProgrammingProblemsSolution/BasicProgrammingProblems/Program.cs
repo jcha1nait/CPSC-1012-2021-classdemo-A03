@@ -82,7 +82,20 @@ namespace BasicProgrammingProblems
                 }
             }
 
-            
+            //Three Racers
+
+            string inputTemp;
+            string racerOneName;
+            double racerOneTime;
+            string racerTwoName;
+            double racerTwoTime;
+            string racerThreeName;
+            double racerThreeTime;
+            string firstPlace;
+            string secondPlace;
+            string thirdPlace;
+
+            Console.Write("What is racer one's name?\t");
 
 
 
