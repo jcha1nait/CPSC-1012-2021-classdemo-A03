@@ -174,15 +174,16 @@ namespace DecisionMakingProblems1
 
 
             double taxAmount;
-            double incomeTax1 = 0.00 + (0.05 * taxAmount);
-            double incomeTax2 = 2500.00 + (0.07 * (taxAmount - 50000));
-            double incomeTax3 = 6000.00 + (0.09 * (taxAmount - 100000));
 
             string inputTemp;
             Console.WriteLine("How much taxable income do you have?\t");
             inputTemp = Console.ReadLine();
 
             taxAmount = double.Parse(inputTemp);
+
+            double incomeTax1 = 0.00 + (0.05 * taxAmount);
+            double incomeTax2 = 2500.00 + (0.07 * (taxAmount - 50000));
+            double incomeTax3 = 6000.00 + (0.09 * (taxAmount - 100000));
 
             if (taxAmount <= 50000)
             {
