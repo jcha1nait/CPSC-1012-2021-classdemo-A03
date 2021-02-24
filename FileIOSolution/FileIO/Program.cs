@@ -1,9 +1,12 @@
 ﻿using System;
+using System.IO; //clarifies the requirement for File I/O
+//using System.Threading.Tasks;
 
 namespace FileIO
 {
     class Program
     {
+        [STAThread]
         /*
              * Methods
              * 
@@ -52,7 +55,7 @@ namespace FileIO
         // Main() is a method
         // special method
         // entry point into your program execution
-        static void Main(string[] args)
+        static void Main(string[] args, string FullFilePathName)
         {
             /*
              * process
@@ -87,6 +90,15 @@ namespace FileIO
                 {
                     case "A":
                         {
+                            //Hard coded file-name
+                            //
+                            //The calling statement
+                            //
+                            //[receiving variable] = MethodName([list of arguments])
+                            //
+                            //on the calling statement your method's list of parameters
+                            //are properly referred to as arguments
+                            FullFilePathName = HardCodedFileName();
                             break;
                         }
                     case "B":
@@ -124,6 +136,31 @@ namespace FileIO
             //BECAUSE the method indicates a returned datatype of string (anything but void),
             //the method REQUIRES a return xxxx; statement
             return Full_Path_FileName;
+        }
+
+        static string WindowEnvironmentFileName()
+        {
+            //Using Environment.GetFolderPath allows the program to get to the 
+            //special folders of your Windows file system(Desktop, Documents, Download,...)
+            string myMachinePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //if you have a folder structure on your Desktop where the file is located
+            //them add that path to the MachinePath
+            myMachinePath += @"\TempData\";
+            //add the actual file name to the Full path
+            string Full_Path_FileName = myMachinePath + @"OneColumn.txt";
+            return Full_Path_FileName;
+        }
+
+        static string UploadFileName()
+        {
+            //Using the windows system File Open dialog
+            //
+            //NOTE: you MUST add the following in front of your Main()
+            //  [STAThread]
+            //
+            //calling the File Open dialog
+            string Full_Path_Name;
+            return "";
         }
     }
 }
