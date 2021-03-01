@@ -7,51 +7,51 @@ namespace LoopProblems1
         static void Main(string[] args)
         {
             //pre-test loop structure (Do-While Structure)
-            //
-            //string inputTemp;
-            //int aNumber;
 
-            //Console.Write("Enter a number:\t");
-            //inputTemp = Console.ReadLine();
-            //aNumber = int.Parse(inputTemp);
-            //int loopExecutions = 0;
+            string inputTemp;
+            int aNumber;
 
-            ////pre-test loop
-            //while (aNumber != 0)
-            //{
-            //    //all code within this coding block belongs to the loop
+            Console.Write("Enter a number:\t");
+            inputTemp = Console.ReadLine();
+            aNumber = int.Parse(inputTemp);
+            int loopExecutions = 0;
 
-            //    //a fast way of adding 1 to a counter
-            //    loopExecutions++;
+            //pre-test loop
+            while (aNumber != 0)
+            {
+                //all code within this coding block belongs to the loop
 
-            //    Console.WriteLine($"You entered the number {aNumber}");
-            //    Console.Write("Enter a number:\t");
-            //    inputTemp = Console.ReadLine();
-            //    aNumber = int.Parse(inputTemp);
-            //}
-            ////next statement is the 1st executable statement after the loop
-            //Console.WriteLine($"The loop has finished, you executed the loop {loopExecutions} times.");
+                //a fast way of adding 1 to a counter
+                loopExecutions++;
 
-            ////post-test loop
-            //do
-            //{
-            //    //all code within this coding block belongs to the loop
+                Console.WriteLine($"You entered the number {aNumber}");
+                Console.Write("Enter a number:\t");
+                inputTemp = Console.ReadLine();
+                aNumber = int.Parse(inputTemp);
+            }
+            //next statement is the 1st executable statement after the loop
+            Console.WriteLine($"The loop has finished, you executed the loop {loopExecutions} times.");
 
-            //    //a fast way of adding 1 to a counter
-            //    loopExecutions++;
+            //post-test loop
+            do
+            {
+                //all code within this coding block belongs to the loop
 
-            //    Console.Write("Enter a number:\t");
-            //    inputTemp = Console.ReadLine();
-            //    aNumber = int.Parse(inputTemp);
-            //    if (aNumber != 0)
-            //    {
-            //        Console.WriteLine($"You entered the number {aNumber}");
-            //    }
+                //a fast way of adding 1 to a counter
+                loopExecutions++;
 
-            //} while (aNumber != 0);
+                Console.Write("Enter a number:\t");
+                inputTemp = Console.ReadLine();
+                aNumber = int.Parse(inputTemp);
+                if (aNumber != 0)
+                {
+                    Console.WriteLine($"You entered the number {aNumber}");
+                }
 
-            //    //next statement is the 1st executable statement after the loop
-            //    Console.WriteLine($"The loop has finished, you executed the loop {loopExecutions} times.");
+            } while (aNumber != 0);
+
+            //next statement is the 1st executable statement after the loop
+            Console.WriteLine($"The loop has finished, you executed the loop {loopExecutions} times.");
 
             //assume you are an instructor
             //enter a mark for each student in your class.
