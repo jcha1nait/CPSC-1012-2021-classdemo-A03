@@ -43,6 +43,11 @@ namespace FileIOWithArrays
                             SequenceSearch(Marks, logicalSize);
                             break;
                         }
+                    case "E":
+                        {
+                            BubbleSort(Marks, logicalSize);
+                            break;
+                        }
                     case "X":
                         {
                             Console.WriteLine("Thank you. Have a nice day.");
@@ -232,6 +237,53 @@ namespace FileIOWithArrays
             }
         }
 
+        static void BubbleSort(int[] Marks, int logicalSize)
+        {
+            //temp swap area
+            int temp = 0;
+
+            //swap flag (was a swap done on this iteration of the outer loop
+            //if there was no swap done on an iteration of the outer loop, it means
+            //  that all required swapping has been done AND the array is in order
+            //this optimizes the logic for sorting
+            bool swapped = true;
+
+            //loop to ensure every combination in the array is covered
+            //since we know the number of iteration required (logicalSize)
+            //  the best looping choice is for()
+            for (int allIndex = 0; allIndex < logicalSize - 1 && swapped; allIndex++)
+            {
+                //the actual comparison loop is the inner loop
+                //this loop needs to be done for each iteration of the outer loop
+                //reset the swap flag for the array iteration
+                swapped = false;
+                //in a Bubble sort, one compares adjacent elements to determine if the elements need to be switched
+                //to optimize the looping, on each execution of the outer loop one can shorten
+                //  the number of iterations on the inner loop
+                for (int swapIndex = 0; swapIndex < logicalSize - allIndex - 1; swapIndex++)
+                {
+                    //test to swap
+                    //ascending order: greater than
+                    //descending order: less than
+                    if (Marks[swapIndex] > Marks[swapIndex + 1])
+                    {
+                        //extra code to see the swap
+                        Console.WriteLine("Pre Swap");
+                        DisplayArray(Marks, logicalSize);
+
+                        //swap
+                        //move one of the value out of the way (into the swap area)
+                        temp = Marks[swapIndex];
+                        Marks[swapIndex] = Marks[swapIndex + 1];
+                        Marks[swapIndex + 1] = temp;
+                        swapped = true;
+
+                        Console.WriteLine("Pre Swap");
+                        DisplayArray(Marks, logicalSize);
+                    }
+                }
+            }
+        }
         static int InputForInt()
         {
             string inputTemp;
