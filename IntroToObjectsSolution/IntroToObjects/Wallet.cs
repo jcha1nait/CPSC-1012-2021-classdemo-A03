@@ -7,7 +7,7 @@ namespace IntroToObjects
     //public access allows outside users access to the class
     //who is the "outside user"?
     // the outside user is anything NOT in the class
-    public class IntroToObjects
+    public class Wallet
     {
         #region Data Members
         //data members
@@ -109,7 +109,7 @@ namespace IntroToObjects
         // Recognize this constructor
         // It has no parameter list
 
-        public IntroToObjects()
+        public Wallet()
         {
             //If there is no code within the constructor, the variables
             //  of the class are assigned the system default values for their
@@ -128,7 +128,7 @@ namespace IntroToObjects
         //"Greedy" Constructor
         //  it has a parameter list that generally has an parameter for EACH and EVERYTHING
         //      data member/auto implemented property in the class
-        public IntroToObjects(int cashbills, int cashcoins, string driverlicense, string bankcard, string gascard, string visacard)
+        public Wallet(int cashbills, int cashcoins, string driverlicense, string bankcard, string gascard, string visacard)
         {
             CashBills = cashbills;
             CashCoins = cashcoins;
