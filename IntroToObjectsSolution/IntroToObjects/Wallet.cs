@@ -63,8 +63,10 @@ namespace IntroToObjects
 
         //Full Implemented Property examples
         public double CashBills
-        {
+        {   
+            //accessor
             get { return _CashBills; }
+            //mutator
             set { _CashBills += value; }
         }
 
@@ -153,15 +155,21 @@ namespace IntroToObjects
                 //logic to change cash bills and coins 
                 if (amount < 5.00)
                 {
-                    CashCoins -= amount;
+                    if (CashCoins > amount)
+                    {
+                        CashCoins = -amount;
+                        valid = true;
+                    }
                 }
                 else
                 {
-                    CashBills -= amount;
+                    if (CashBills > amount)
+                    {
+                        CashBills = -amount;
+                        valid = true;
+                    }
                 }
-                valid = true;
             }
-
             return valid;
         }
         #endregion
