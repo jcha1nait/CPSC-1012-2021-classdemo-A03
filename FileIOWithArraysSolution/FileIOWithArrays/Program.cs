@@ -48,6 +48,21 @@ namespace FileIOWithArrays
                             BubbleSort(Marks, logicalSize);
                             break;
                         }
+                    case "F":
+                        {
+                            int foundIndex = -1;
+                            foundIndex = BinarySearch(Marks, logicalSize);
+                            if (foundIndex > -1)
+                            {
+                                Console.WriteLine($"The value you are searching for is located at index {foundIndex} in the array." +
+                                    $"The search value was {Marks[foundIndex]}.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Thank you. Have a nice day.");
+                            }
+                            break;
+                        }
                     case "X":
                         {
                             Console.WriteLine("Thank you. Have a nice day.");
@@ -136,6 +151,8 @@ namespace FileIOWithArrays
             Console.WriteLine("b) Using Windows Environment (DeskTop, Documents, Download) path file name.");
             Console.WriteLine("c) Writing to a file.");
             Console.WriteLine("d) Search an array: Sequence Search.");
+            Console.WriteLine("e) Sort an array: Bubble Sort");
+            Console.WriteLine("f) Search an array: Binary Search");
             Console.WriteLine("x) Exit.\n");
             Console.Write("Enter the menu option for File I/O\t");
             inputTempLocal = Console.ReadLine();
@@ -284,6 +301,50 @@ namespace FileIOWithArrays
                 }
             }
         }
+
+        static int BinarySearch(int[] Marks, int logicalSize)
+        {
+            int searchArg = InputForInt();
+            int firstIndex = 0;
+            int lastIndex = logicalSize - 1;
+            int middleIndex = 0;
+            //the found index is also serving as the flag to indicate that the search value has been found
+            //since arrays do NOT have negative indexes, if the foundIndex is altered then logical reason
+            // is the index point to a place in your array where your search argument exists.
+            int foundIndex = -1;
+
+            //there will be an unknown number of times through the loop
+            //thus the best choice for looping will be the while loop
+            while (firstIndex <= lastIndex && foundIndex == -1)
+            {
+                //find the middle index
+                //this must be done using integer arithmetic
+                middleIndex = (firstIndex + lastIndex) / 2;
+
+                //comparisons
+                if (searchArg > Marks[middleIndex])
+                {
+                    //everything in the SORTED array below the value at the middle index
+                    //  AND the middle index cannot logically be my search argument
+                    firstIndex = middleIndex + 1;
+                }
+                else
+                {
+                    if (searchArg < Marks[middleIndex])
+                    {   
+                        //everything in the SORTED array above the value at the middle index
+                        // 
+                        lastIndex = middleIndex - 1;
+                    }
+                    else
+                    {
+                        foundIndex = middleIndex;
+                    }
+                }
+            }
+            return foundIndex;
+        }
+
         static int InputForInt()
         {
             string inputTemp;
